@@ -25,15 +25,14 @@
         }		
 		
 		
-		public function showViews() {
-			
+		public function showViews() {		
 			
 			#récuperation contenu article et comptage
 				global $plxMotor;
 				/* gestion et message de la sauvegarde param */
-				include('core/lib/class.plx.msg.php');
-				define ('L_SAVE_SUCCESSFUL' ,'');
-				define ('L_SAVE_ERR','');
+				include_once('core/lib/class.plx.msg.php');
+				defined('L_SAVE_SUCCESSFUL') or define('L_SAVE_SUCCESSFUL', '');
+				defined('L_SAVE_ERR') or define('L_SAVE_ERR', '');
 				/* fin reset message sauvegardes */
 				
 				#comptage des vues				
@@ -49,4 +48,4 @@
 				echo '<span class="plx_artViews">'.$infosViews .' '. $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_VIEWS').'</span>';
 		}
 }
-?>
+?>	
