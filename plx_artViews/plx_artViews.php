@@ -46,7 +46,7 @@
 				$infosViews = $var[$plxMotor->plxRecord_arts->f('numero')];		
 			
 			#affichage vues
-				echo '<span clax="plx_artViews'>$infosViews .' '. $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_VIEWS').'</span>';
+				echo '<span class="plx_artViews">'.$infosViews .' '. $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_VIEWS').'</span>';
 		}
 }
-?>	
+?>
