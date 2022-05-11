@@ -2,8 +2,9 @@
 <document>
     <title><![CDATA[Vues]]></title>
     <author><![CDATA[G.Cyrillus]]></author>
-    <version>0.1</version>
-    <date>10/05/2022</date>
+    <version>0.2</version>
+    <date>11/05/2022</date>
     <site>http://re7net.com</site>
-    <description><![CDATA[Compte et affiche le nombre de vue (chargement de la page en mode article)]]></description>
+    <description><![CDATA[Compte et affiche le nombre de vue (chargement de la page en mode article)
+exclusions des bots possible.]]></description>
 </document>
