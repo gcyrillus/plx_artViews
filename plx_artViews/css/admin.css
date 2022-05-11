@@ -1,0 +1,34 @@
+form#plx_artViews {
+	width: max-content;
+	margin:1em;
+}
+form#plx_artViews fieldset {
+	display:grid;
+	grid-template-columns:repeat(2,auto);
+	gap: 1em;
+	align-items:center;
+}
+#plx_artViews label{
+	margin-inline-start: auto;
+}
+#plx_artViews input,
+#plx_artViews select{
+	margin-inline-end: auto;
+}
+#plx_artViews legend{
+	background:ivory;
+	font-size:1.4em;
+}
+#plx_artViews code{
+	color:blue;
+	padding:0.2rem 0.1rem;
+	background:cornsilk;
+}
+#plx_artViews input[type="submit"], button{
+	margin-inline-end: auto;
+	background:tomato;
+}
+#plx_artViews button:not(:hover) {
+	background:initial;
+	color:initial
+}
