@@ -29,7 +29,7 @@
         }		
 		
 		
-		public function showViews() {	
+	public function showViews() {	
 			if (BOTS_OFF == 1 ){
 				$bots = array(
 					 'google'
@@ -87,25 +87,9 @@
 			#affichage vues
 				echo '<span class="plx_artViews">'.$infosViews .' '. $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_VIEWS').'</span>';
 				
-				
-			///////////////////////////////////////////////////////////////////////	
-				
-				
-
-				
-
-	
-				
-				
-				
-				
-				
-			///////////////////////////////////////////////////////////////////////	
-				
 		}
 	public function mostViews() {
-		
-		
+		// idée		
 	}
 }
 ?>	
