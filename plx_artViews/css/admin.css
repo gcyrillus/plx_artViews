@@ -1,0 +1,100 @@
+
+form#plx_artViews {
+ width: max-content;
+  width: 100%;
+  margin: 2em auto;
+}
+form#plx_artViews fieldset {
+ display:grid;
+ grid-template-columns:repeat(2,auto);
+ gap: 1em;
+ align-items:center;
+  background:  lightblue;
+  padding: 0.5em 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 3px;
+    
+}
+#plx_artViews label {
+ margin-inline-start: auto;
+}
+#plx_artViews input,
+#plx_artViews select {
+ margin-inline-end: auto;
+}
+#plx_artViews legend {
+ background:ivory;
+ font-size:1.4em;
+  border-radius: 5px;
+  box-shadow: 0 0 2px;
+  padding-inline: 0.5em;
+}
+#plx_artViews code {
+ color:blue;
+ padding:0.2rem 0.1rem;
+ background:cornsilk;
+}
+#plx_artViews input[type="submit"],
+button {
+ margin-inline-end: auto;
+ background:tomato;
+}
+#plx_artViews button:not(:hover) {
+ background:initial;
+ color:initial
+}
+#infos {
+ display:grid;
+ grid-template-columns:repeat(2,minmax(200px,1fr));
+ border:solid 1px;
+ max-width:80%;
+ width:max-content;
+ margin:auto;
+ border-radius: 1em;
+ overflow:hidden;
+}
+#infos>h3 {
+ grid-column:1/-1;
+ background:lightgray;
+ margin: 0;
+ padding-block: 0.5em;
+ text-align: center
+}
+#infos > div {
+ box-shadow:0 0 0 1px;
+ padding:0 1.5em;
+}
+#infos h4 {
+ margin:0;
+ font-weight:bold;
+ text-indent:-1em;
+}
+#plx_artViews>fieldset> b {
+ grid-column: 1/-1;
+  background: ivory;
+  margin-inline:  -1em;
+  padding-inline: 1em; 
+  border-radius: 5px;
+}
+#plx_artViews textarea{
+  font-family: monospace;
+  font-weight:bold;
+  color:deeppink;
+  font-size: 0.8em;
+  white-space: nowrap;
+  min-height:3em;
+}
+#plx_artViews ~ #infos > div {
+  display: grid;
+  align-items: center;
+}
+
+#plx_artViews label b {
+  color: red;
+  background: wheat;
+  padding-inline: 0.2em;
+  transform: rotate(-15deg);
+  display: inline-block;
+  border-radius: 0.5em;
+  border: solid;
+}
