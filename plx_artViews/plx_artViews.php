@@ -28,12 +28,11 @@
 
         }		
 		#code à exécuter à l’activation du plugin
-		/* config par defaug  */	
+		/* config par defaug  */		
         public function OnActivate() { 
-			global $plxMotor;
-			$plxMotor->plxPlugins->aPlugins[__CLASS__]->setParam( 'excludeBots', 1 , 'numeric') ; 
-			$plxMotor->plxPlugins->aPlugins[__CLASS__]->setParam( 'nbArts', 	 5 , 'numeric') ; 
-			$plxMotor->plxPlugins->aPlugins[__CLASS__]->saveParams();		
+			$this->setParam( 'excludeBots', 1 , 'numeric') ; 
+			$this->setParam( 'nbArts', 	 5 , 'numeric') ; 
+			$this->saveParams();		
 		}		
 		
 		public function showViews() {	
