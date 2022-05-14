@@ -3,7 +3,7 @@
 <h3>Configuration</h3>
 <p>Optionnelle</p>
 <p>Le filtrage des robots indexeur peut-être désactivé (activé par défaut)</p>
-<p>Le nombre de lien vers les articles les plus peut-être modifié (default:5)
+<p>Le nombre de lien vers les articles les plus lus peut-être modifié (default:5)
 <h3>Affichage Dans les fichiers des  théme</h3>
   <h4>Afficher le nombre de vue</h4>
 <p>Pour afficher le nombre de vue, inserez le code suivant :
