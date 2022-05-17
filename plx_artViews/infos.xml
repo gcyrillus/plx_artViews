@@ -2,8 +2,8 @@
 <document>
     <title><![CDATA[Vues]]></title>
     <author><![CDATA[G.Cyrillus]]></author>
-    <version>0.3</version>
-    <date>13/05/2022</date>
+    <version>0.4</version>
+    <date>16/05/2022</date>
     <site>http://re7net.com</site>
     <description><![CDATA[Compte et affiche le nombre de vue (comptage au chargement de la page en mode article) 
 	- Options exclusions des bots 

@@ -33,12 +33,12 @@
 
 </form>
 	<div id="infos">
-		<h3><?php echo $plxPlugin->getLang('L_VIEWS_INFOS') ?> </h3>
+		<h3><?php echo $plxPlugin->getLang('L_VIEWS_INFOS') . ' ' . $plxPlugin->getParam('set')?> </h3>
 		<div>
 		<p><?php echo $plxPlugin->getLang('L_TOTAL_VIEWS') ?>: <?php $plxPlugin->mostViews('total'); ?> </p>
 		</div>
 		<div>
-		<?php $plxPlugin->mostViews(''); ?>
+		<?php $plxPlugin->mostViews('');?>
 		</div>
 	</div>
 <script>
