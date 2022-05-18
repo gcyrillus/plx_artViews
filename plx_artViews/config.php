@@ -13,7 +13,6 @@
 	$var['excludeBots'] = $plxPlugin->getParam('excludeBots')=='' ?  1 	: $plxPlugin->getParam('excludeBots');
 	$var['nbArts'	  ] = $plxPlugin->getParam('nbArts'		)=='' ?  5 	: $plxPlugin->getParam('nbArts'     );
 	
-
 ?>
 
 <form action="parametres_plugin.php?p=<?php echo $plugin ?>" method="post" id="plx_artViews">
@@ -33,12 +32,12 @@
 
 </form>
 	<div id="infos">
-		<h3><?php echo $plxPlugin->getLang('L_VIEWS_INFOS') ?> </h3>
+		<h3><?php echo $plxPlugin->getLang('L_VIEWS_INFOS') . ' ' . $plxPlugin->checkMonthLangDate($plxPlugin->getParam('set'))?> </h3>
 		<div>
 		<p><?php echo $plxPlugin->getLang('L_TOTAL_VIEWS') ?>: <?php $plxPlugin->mostViews('total'); ?> </p>
 		</div>
 		<div>
-		<?php $plxPlugin->mostViews(''); ?>
+		<?php $plxPlugin->mostViews('');?>
 		</div>
 	</div>
 <script>

@@ -45,7 +45,7 @@ button {
 }
 #infos {
  display:grid;
- grid-template-columns:repeat(2,minmax(200px,1fr));
+ grid-template-columns: minmax(min-content,12em) max-content;
  border:solid 1px;
  max-width:80%;
  width:max-content;
