@@ -46,3 +46,5 @@
 </code></pre>
 
 <hr>
+aperçu administration:
+<img src="https://github.com/gcyrillus/plx_artViews/blob/v0.4/vues0.4.jpg">
