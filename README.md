@@ -4,7 +4,7 @@
 <p>Optionnelle</p>
 <p>Le filtrage des robots indexeur peut-être désactivé (activé par défaut)</p>
 <p>Le nombre de lien vers les articles les plus lus peut-être modifié (default:5)</p>
-<p><b>Le fichier stockant les infos de configuration et de stockage</b> est situé dans le repertoire de <code>data/configuration/plugins</code> <small>(repertoire commun de configuration des plugins)</small>, ce fichier est désactiver lorsque le plugin est désactiver, <b>ce fichier est supprimé lorsque vous supprimez le plugin</b>. Faites en un backup si vous souhaitez preservé la configuration et comptage des vues.</p>
+<p><b>Le fichier stockant les infos de configuration et de stockage</b> est situé dans le repertoire de <code>data/configuration/plugins</code> <sub><sup>(repertoire commun de configuration des plugins)</sup></sub>, ce fichier est désactiver lorsque le plugin est désactiver, <b>ce fichier est supprimé lorsque vous supprimez le plugin</b>. Faites en un backup si vous souhaitez preservé la configuration et comptage des vues.</p>
 <h3>Affichage Dans les fichiers des  théme</h3>
   <h4>Afficher le nombre de vue</h4>
 <p>Pour afficher le nombre de vue, inserez le code suivant :
