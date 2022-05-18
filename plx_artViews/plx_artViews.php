@@ -1,8 +1,8 @@
 <?php
-class plx_artViews extends plxPlugin {	 
-
-	public function __construct($default_lang) {
-
+  class plx_artViews extends plxPlugin {	 
+	
+    public function __construct($default_lang) {
+	
 		# appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
 		
@@ -10,15 +10,15 @@ class plx_artViews extends plxPlugin {
 		$this->addHook('IndexBegin', 'IndexBegin');
 		$this->addHook('showViews', 'showViews');
 		$this->addHook('mostViews', 'mostViews');
-		
-		# droits pour accèder à la page config.php du plugin
+        
+        # droits pour accèder à la page config.php du plugin
 		$this->setConfigProfil(PROFIL_ADMIN);
 		
 		// initialize la constabte BOTS_OFF , false par défaut.
 		if ($this->getParam('excludeBots') ==='1') { define('BOTS_OFF', true);} else { define('BOTS_OFF', false);}		
 
-	}
-		# désactive de force la compression gzip 
+    }
+        # désactive de force la compression gzip 
 	public function  IndexBegin() {
 	echo '<?php ';
 		?>
@@ -30,15 +30,11 @@ class plx_artViews extends plxPlugin {
 	#code à exécuter à l’activation du plugin
 	/* config par defaug  */		
 	public function OnActivate() { 
-	$jour = date("d M Y");
-	if($this->getParam('set')=='') {
-        $this->setParam('set', $jour , 'string');
-	}
 		$this->setParam( 'excludeBots', 1 , 'numeric') ; 
 		$this->setParam( 'nbArts', 	5 , 'numeric') ; 
 		$this->saveParams();		
 	}		
-	/* Affiche et incremente le nombre de vues */
+	
 	public function showViews() {	
 		if (BOTS_OFF === true ){
 			$bots = array('google','msnbot','ia_archiver','lycos','jeeves','scooter','fast-webcrawler','slurp@inktomi','turnitinbot','technorati','yahoo','findexa','findlinks','gaisbo','zyborg','surveybot','bloglines','blogsearch','pubsub','syndic8','userland','gigabot','become.com','baiduspider','360spider','spider','sosospider','yandex');	
@@ -70,8 +66,6 @@ class plx_artViews extends plxPlugin {
 
 			
 	}
-
-	/* affiche une liste des articles les plus vues */
 	public function mostViews($option) {
 		// or load as file
 		$stats = new SimpleXMLElement(PLX_ROOT.PLX_CONFIG_PATH.'plugins/'.__CLASS__.'.xml',null,true);
@@ -115,22 +109,5 @@ class plx_artViews extends plxPlugin {
 			echo $totalNum;
 		}	
 	}
-
-
-	/* traduction du mois si langue autre que anglais et disponible */
-	public function checkMonthLangDate($stringDate) {
-		if($this->default_lang !='en' && file_exists(PLX_PLUGINS.'EBook/lang/'.$this->default_lang.'.php')) {
-			$MonthToTranslate = array('Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sept','Oct',' Nov','Dec') ;
-			$index=0;
-			foreach($this->getLang('L_DATE_LANG') as $month){
-				$stringDate = str_replace(trim($MonthToTranslate[$index]), $this->getLang('L_DATE_LANG')[$index], $stringDate);  	
-				$index++;				
-			}
-		return $stringDate;
-		}
-		
-	}
-
-
 }
 ?>	
