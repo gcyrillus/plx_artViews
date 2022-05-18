@@ -41,10 +41,10 @@ class plx_artViews extends plxPlugin {
 	/* Affiche et incremente le nombre de vues */
 	public function showViews() {	
 		if (BOTS_OFF === true ){
-			$bots = array('google','msnbot','ia_archiver','lycos','jeeves','scooter','fast-webcrawler','slurp@inktomi','turnitinbot','technorati','yahoo','findexa','findlinks','gaisbo','zyborg','surveybot','bloglines','blogsearch','pubsub','syndic8','userland','gigabot','become.com','baiduspider','360spider','spider','sosospider','yandex');	
+			$bots = 'bot';	
 		}
 		else {
-			$bots = array();
+			$bots = '';
 		}	
 		
 		#récuperation contenu article et comptage
@@ -59,8 +59,8 @@ class plx_artViews extends plxPlugin {
 		if($plxMotor->mode != 'erreur') {		
 			$var[$plxMotor->plxRecord_arts->f('numero')] =   $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ==''  ? '0' :$plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ;	
 		}			
-			$useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : '';
-			if($plxMotor->mode == 'article'  &&  (!in_array($useragent, $bots))){
+			$useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : 'hidden';
+			if($plxMotor->mode == 'article'  &&  (strpos(strtolower($useragent), $bots)==false)){
 				$var[$plxMotor->plxRecord_arts->f('numero')]++;
 				$plxMotor->plxPlugins->aPlugins[__CLASS__]->setParam( 'A-'.$plxMotor->plxRecord_arts->f('numero'), $var[$plxMotor->plxRecord_arts->f('numero')], 'numeric') ; 
 				$plxMotor->plxPlugins->aPlugins[__CLASS__]->saveParams();
