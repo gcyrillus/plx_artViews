@@ -38,7 +38,7 @@ class plx_artViews extends plxPlugin {
 		$this->setParam( 'nbArts', 	5 , 'numeric') ; 
 		$this->saveParams();		
 	}		
-
+	/* Affiche et incremente le nombre de vues */
 	public function showViews() {	
 		if (BOTS_OFF === true ){
 			$bots = array('google','msnbot','ia_archiver','lycos','jeeves','scooter','fast-webcrawler','slurp@inktomi','turnitinbot','technorati','yahoo','findexa','findlinks','gaisbo','zyborg','surveybot','bloglines','blogsearch','pubsub','syndic8','userland','gigabot','become.com','baiduspider','360spider','spider','sosospider','yandex');	
@@ -70,6 +70,8 @@ class plx_artViews extends plxPlugin {
 
 			
 	}
+
+	/* affiche une liste des articles les plus vues */
 	public function mostViews($option) {
 		// or load as file
 		$stats = new SimpleXMLElement(PLX_ROOT.PLX_CONFIG_PATH.'plugins/'.__CLASS__.'.xml',null,true);
@@ -113,5 +115,22 @@ class plx_artViews extends plxPlugin {
 			echo $totalNum;
 		}	
 	}
+
+
+	/* traduction du mois si langue autre que anglais et disponible */
+	public function checkMonthLangDate($stringDate) {
+		if($this->default_lang !='en' && file_exists(PLX_PLUGINS.'EBook/lang/'.$this->default_lang.'.php')) {
+			$MonthToTranslate = array('Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sept','Oct',' Nov','Dec') ;
+			$index=0;
+			foreach($this->getLang('L_DATE_LANG') as $month){
+				$stringDate = str_replace(trim($MonthToTranslate[$index]), $this->getLang('L_DATE_LANG')[$index], $stringDate);  	
+				$index++;				
+			}
+		return $stringDate;
+		}
+		
+	}
+
+
 }
 ?>	
