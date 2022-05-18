@@ -16,6 +16,7 @@ $LANG = array(
 'L_VIEW_CODE'					=>' Codes to insert',
 'L_VIEW_LIST_CODE'				=>' Print most read ',		
 'L_CODE_TO_INSERT_MOST'			=>' Code to insert in your themes to show list of most read articles ',
+'L_PAGE_404'					=>' 404: ',
 #dates
 'L_DATE_LANG'					=> array('jan','feb','mar','apr','may','june','july','aug','sept','oct',' nov','dec'), // no use for english language, but others requires it
 

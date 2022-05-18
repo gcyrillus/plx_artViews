@@ -55,15 +55,26 @@ class plx_artViews extends plxPlugin {
 			defined('L_SAVE_ERR') or define('L_SAVE_ERR', '');
 		/* fin reset message sauvegardes */
 			
-		#comptage des vues				
-			$var[$plxMotor->plxRecord_arts->f('numero')] =   $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ==''  ? '0' :$plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ;				
+		#comptage des vues	
+		if($plxMotor->mode != 'erreur') {		
+			$var[$plxMotor->plxRecord_arts->f('numero')] =   $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ==''  ? '0' :$plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ;	
+		}			
 			$useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : '';
 			if($plxMotor->mode == 'article'  &&  (!in_array($useragent, $bots))){
 				$var[$plxMotor->plxRecord_arts->f('numero')]++;
 				$plxMotor->plxPlugins->aPlugins[__CLASS__]->setParam( 'A-'.$plxMotor->plxRecord_arts->f('numero'), $var[$plxMotor->plxRecord_arts->f('numero')], 'numeric') ; 
 				$plxMotor->plxPlugins->aPlugins[__CLASS__]->saveParams();
 			}
-			$infosViews = $var[$plxMotor->plxRecord_arts->f('numero')];		
+		if($plxMotor->mode != 'erreur') {					
+			$infosViews = $var[$plxMotor->plxRecord_arts->f('numero')];	
+		}	
+			if($plxMotor->mode == 'erreur') {
+				$var['erreur'] =   $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('erreur') ==''  ? '0' :$plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('erreur') ;	
+				$var['erreur']++;
+				$plxMotor->plxPlugins->aPlugins[__CLASS__]->setParam( 'erreur', $var['erreur'], 'numeric') ; 
+				$plxMotor->plxPlugins->aPlugins[__CLASS__]->saveParams();	
+				$infosViews	= $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_PAGE_404').' '.$var['erreur'];			
+			}
 		
 		#affichage vues
 			echo '<span class="plx_artViews">'.$infosViews .' '. $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_VIEWS').'</span>';

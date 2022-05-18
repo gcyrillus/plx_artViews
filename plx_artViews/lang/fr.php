@@ -16,6 +16,7 @@ $LANG = array(
 'L_VIEW_CODE'					=>' Codes à inserer',
 'L_VIEW_LIST_CODE'				=>' Affichage liste des plus lus ',		
 'L_CODE_TO_INSERT_MOST'			=>' Code pour afficher la liste des plus vus  dans vos thèmes ',
+'L_PAGE_404'					=>' Page 404: ',
 
 #dates
 'L_DATE_LANG'						=> array('janv','févr',' mars','avril','mai','juin','juil','août','sept','oct','nov','déc'),
