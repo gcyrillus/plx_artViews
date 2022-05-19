@@ -44,7 +44,7 @@ class plx_artViews extends plxPlugin {
 			$bots = 'bot';	
 		}
 		else {
-			$bots = '';
+			$bots = 'botsAreWelcome';
 		}	
 		
 		#récuperation contenu article et comptage
