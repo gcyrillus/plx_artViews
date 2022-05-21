@@ -36,7 +36,7 @@
 		<h3><?php echo $plxPlugin->getLang('L_VIEWS_INFOS') . ' ' . $plxPlugin->checkMonthLangDate($plxPlugin->getParam('set'))?> </h3>
 		<div>
 		<p><?php echo $plxPlugin->getLang('L_TOTAL_VIEWS') ?>: <?php $plxPlugin->mostViews('total'); ?> </p>
-		<p><?php echo $plxPlugin->getLang('L_PAGE_404')  ; echo ' '.$plxPlugin->getParam('erreur').$plxPlugin->getLang('L_VIEWS') ; ?> </p>
+		<p><?php echo $plxPlugin->getLang('L_PAGE_404')  ; echo ' '.$var['erreur'].$plxPlugin->getLang('L_VIEWS') ; ?> </p>
 		</div>
 		<div>
 		<?php $plxPlugin->mostViews('');?>
