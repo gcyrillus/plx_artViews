@@ -95,7 +95,8 @@ class plx_artViews extends plxPlugin {
 				$list["$num"]= "$artViewved";
 				$totalNum = $totalNum + $list["$num"];				
 			}
-		}	
+		}
+		if($list) {
 		// sort harvest
 		arsort($list);
 		// get articles datas			
@@ -121,6 +122,7 @@ class plx_artViews extends plxPlugin {
 				if($i == $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('nbArts')) break;
 			}
 		echo '			</ul>'.PHP_EOL;
+		}
 		}
 		if($option == 'total') {
 			echo $totalNum;
