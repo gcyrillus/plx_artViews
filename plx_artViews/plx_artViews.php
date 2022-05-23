@@ -96,7 +96,7 @@ class plx_artViews extends plxPlugin {
 				$totalNum = $totalNum + $list["$num"];				
 			}
 		}
-		if($list) {
+		if(@$list) {
 		// sort harvest
 		arsort($list);
 		// get articles datas			
