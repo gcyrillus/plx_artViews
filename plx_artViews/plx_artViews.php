@@ -146,4 +146,4 @@ class plx_artViews extends plxPlugin {
 
 
 }
-?>	
+?>
