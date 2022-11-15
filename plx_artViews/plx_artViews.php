@@ -85,7 +85,7 @@ class plx_artViews extends plxPlugin {
 	/* affiche une liste des articles les plus vues */
 	public function mostViews($option) {
 		// or load as file
-		$stats = new SimpleXMLElement(PLX_ROOT.PLX_CONFIG_PATH.'plugins/'.__CLASS__.'.xml',null,true);
+		$stats = @new SimpleXMLElement(PLX_ROOT.PLX_CONFIG_PATH.'plugins/'.__CLASS__.'.xml',null,true);
 		$totalNum =0;		
 		foreach($stats as $artViewved ) {
 			$num='';
