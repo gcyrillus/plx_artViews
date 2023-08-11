@@ -116,9 +116,11 @@ class plx_artViews extends plxPlugin {
 			foreach($list as $numero => $val) {
 				$i++;
 				$find =str_pad( $numero,4,"0", STR_PAD_LEFT);// format expected
+				if(isset($find]['url'])){
 				echo '				<li>
 				<a href="'.$plxMotor->urlRewrite('?article' . ltrim($numero,'0') . '/' . $artsList[$find]['url']).'" title="'.$artsList[$find]['title'].'">'. $artsList[$find]['title'].' ('.$list[$find].') </a>
 			</li>'.PHP_EOL;
+				}
 				if($i == $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('nbArts')) break;
 			}
 		echo '			</ul>'.PHP_EOL;
