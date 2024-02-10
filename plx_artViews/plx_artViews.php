@@ -55,7 +55,11 @@ class plx_artViews extends plxPlugin {
 			defined('L_SAVE_ERR') or define('L_SAVE_ERR', '');
 		/* fin reset message sauvegardes */
 			
-		#comptage des vues	
+		#comptage des vues avec au minimum un intervalle d'une seconde
+		$file=PLX_ROOT.'data/configuration/plugins/plx_artViews.xml';
+		$dateFile = date('s',filemtime($file) );
+		$now= date('s');
+		if ($dateFile !== $now && $dateFile !== --$now) {
 		if($plxMotor->mode != 'erreur') {		
 			$var[$plxMotor->plxRecord_arts->f('numero')] =   $plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ==''  ? '0' :$plxMotor->plxPlugins->aPlugins[__CLASS__]->getParam('A-'.$plxMotor->plxRecord_arts->f('numero')) ;	
 		}			
@@ -75,8 +79,8 @@ class plx_artViews extends plxPlugin {
 				$plxMotor->plxPlugins->aPlugins[__CLASS__]->saveParams();	
 				$infosViews	= $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_PAGE_404').' '.$var['erreur'];			
 			}
-		
-		#affichage vues
+			}
+			#affichage vues
 			echo '<span class="plx_artViews">'.$infosViews .' '. $plxMotor->plxPlugins->aPlugins[__CLASS__]->getLang('L_VIEWS').'</span>';
 
 			
